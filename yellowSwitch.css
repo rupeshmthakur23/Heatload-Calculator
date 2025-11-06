@@ -1,0 +1,54 @@
+/* Yellow pill style for AntD Switch — works with v4/v5 */
+.yellow-switch {
+  /* Tunables */
+  --ys-track-h: 24px;
+  --ys-track-w: 48px;
+  --ys-handle: 18px;
+  --ys-pad: 3px;
+  --ys-on: #f9cf3e;          /* yellow on */
+  --ys-off: #cfcfcf;         /* grey off */
+  --ys-ring: rgba(42, 97, 226, 0.08);
+
+  width: var(--ys-track-w);
+  min-width: var(--ys-track-w);
+  height: var(--ys-track-h);
+  border-radius: 9999px !important;
+  background: var(--ys-off) !important;
+  box-shadow: 0 0 0 2px var(--ys-ring);
+}
+
+/* optional subtle hover halo */
+.yellow-switch:hover {
+  box-shadow: 0 0 0 3px var(--ys-ring);
+}
+
+/* Thumb */
+.yellow-switch .ant-switch-handle {
+  width: var(--ys-handle);
+  height: var(--ys-handle);
+  top: var(--ys-pad);
+  left: var(--ys-pad);
+}
+.yellow-switch .ant-switch-handle::before {
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Checked state */
+.yellow-switch.ant-switch-checked {
+  background: var(--ys-on) !important;
+}
+.yellow-switch.ant-switch-checked .ant-switch-handle {
+  left: calc(100% - var(--ys-handle) - var(--ys-pad));
+}
+
+/* Make sure it's fully pill-shaped in all AntD versions */
+.yellow-switch,
+.yellow-switch .ant-switch-inner {
+  border-radius: 9999px !important;
+}
+
+/* Optional: hide inner content if AntD tries to render it */
+.yellow-switch .ant-switch-inner {
+  display: none;
+}
